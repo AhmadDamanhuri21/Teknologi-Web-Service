@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="lyKx-V7ATuMeYbm3cefP">
+    <mxGraphModel dx="1094" dy="598" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="light-dark(#FFFFFF,#121212)" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="SDyVhXaV4fFdCUikSm9E-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Aplikasi MObile" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-18" edge="1" parent="1" source="SDyVhXaV4fFdCUikSm9E-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="SDyVhXaV4fFdCUikSm9E-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="SDyVhXaV4fFdCUikSm9E-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Prisma ORM&amp;nbsp;" vertex="1">
+          <mxGeometry height="60" width="120" x="295" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="SDyVhXaV4fFdCUikSm9E-11" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="MariaDB&lt;div&gt;&amp;nbsp;Database&amp;nbsp;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="295" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="HTTP Request (JSON)" vertex="1">
+          <mxGeometry height="10" width="30" x="390" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-17" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="SDyVhXaV4fFdCUikSm9E-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="430" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Web Admin" vertex="1">
+          <mxGeometry height="60" width="120" x="400" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-11" edge="1" parent="1" source="SDyVhXaV4fFdCUikSm9E-2" style="endArrow=none;html=1;rounded=0;entryX=0.565;entryY=0.986;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="KL2Uvfk6Kh-vWMgWpmTB-8" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="260" />
+              <mxPoint x="467.8" y="260" />
+            </Array>
+            <mxPoint x="230" y="260" as="sourcePoint" />
+            <mxPoint x="470" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-14" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="360" y="260" as="sourcePoint" />
+            <mxPoint x="360" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-20" edge="1" parent="1" style="endArrow=classic;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="420" y="430" as="sourcePoint" />
+            <mxPoint x="420" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-23" parent="1" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" value="Backend NestJS" vertex="1">
+          <mxGeometry height="120" width="140" x="285" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-24" parent="KL2Uvfk6Kh-vWMgWpmTB-23" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Module " vertex="1">
+          <mxGeometry height="30" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-25" parent="KL2Uvfk6Kh-vWMgWpmTB-23" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Controller  " vertex="1">
+          <mxGeometry height="30" width="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KL2Uvfk6Kh-vWMgWpmTB-26" parent="KL2Uvfk6Kh-vWMgWpmTB-23" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" value="Service         " vertex="1">
+          <mxGeometry height="30" width="140" y="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
