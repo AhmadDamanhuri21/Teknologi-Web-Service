@@ -1,0 +1,238 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "App"
+        ]
+      }
+    },
+    "/destinasi": {
+      "get": {
+        "operationId": "DestinasiController_getAllDestinasi",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Daftar destinasi berhasil diambil"
+          }
+        },
+        "summary": "Mendapatkan semua destinasi wisata",
+        "tags": [
+          "Destinasi"
+        ]
+      },
+      "post": {
+        "operationId": "DestinasiController_createDestinasi",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDestinasiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Destinasi berhasil ditambahkan"
+          },
+          "400": {
+            "description": "Data yang dikirim tidak valid"
+          }
+        },
+        "summary": "Menambahkan destinasi wisata baru",
+        "tags": [
+          "Destinasi"
+        ]
+      }
+    },
+    "/destinasi/{id}": {
+      "get": {
+        "operationId": "DestinasiController_getDestinasiById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Detail destinasi berhasil diambil"
+          },
+          "404": {
+            "description": "Destinasi tidak ditemukan"
+          }
+        },
+        "summary": "Mendapatkan detail destinasi berdasarkan ID",
+        "tags": [
+          "Destinasi"
+        ]
+      },
+      "patch": {
+        "operationId": "DestinasiController_updateDestinasi",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDestinasiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Destinasi berhasil diperbarui"
+          },
+          "404": {
+            "description": "Destinasi tidak ditemukan"
+          }
+        },
+        "summary": "Memperbarui data destinasi berdasarkan ID",
+        "tags": [
+          "Destinasi"
+        ]
+      },
+      "delete": {
+        "operationId": "DestinasiController_deleteDestinasi",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Destinasi berhasil dihapus"
+          },
+          "404": {
+            "description": "Destinasi tidak ditemukan"
+          }
+        },
+        "summary": "Menghapus destinasi berdasarkan ID",
+        "tags": [
+          "Destinasi"
+        ]
+      }
+    },
+    "/destinasi/{id}/ulasan": {
+      "get": {
+        "operationId": "DestinasiController_getUlasanDestinasi",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Daftar ulasan destinasi berhasil diambil"
+          },
+          "404": {
+            "description": "Destinasi tidak ditemukan"
+          }
+        },
+        "summary": "Mendapatkan ulasan berdasarkan ID destinasi",
+        "tags": [
+          "Destinasi"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "WisataKu API",
+    "description": "API untuk platform informasi dan reservasi destinasi wisata",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "CreateDestinasiDto": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string",
+            "example": "Pantai Tanjung Aan",
+            "description": "Nama destinasi wisata"
+          },
+          "kategori": {
+            "type": "string",
+            "example": "Pantai",
+            "description": "Kategori destinasi wisata"
+          },
+          "hargaTiket": {
+            "type": "number",
+            "example": 15000,
+            "description": "Harga tiket masuk dalam rupiah"
+          }
+        },
+        "required": [
+          "nama",
+          "kategori",
+          "hargaTiket"
+        ]
+      },
+      "UpdateDestinasiDto": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string",
+            "example": "Pantai Tanjung Aan",
+            "description": "Nama destinasi wisata"
+          },
+          "kategori": {
+            "type": "string",
+            "example": "Pantai",
+            "description": "Kategori destinasi wisata"
+          },
+          "hargaTiket": {
+            "type": "number",
+            "example": 15000,
+            "description": "Harga tiket masuk dalam rupiah"
+          }
+        }
+      }
+    }
+  }
+}
