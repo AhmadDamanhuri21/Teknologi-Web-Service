@@ -1,0 +1,365 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/": {
+      "get": {
+        "operationId": "AppController_getHello",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "tags": [
+          "App"
+        ]
+      }
+    },
+    "/destinasi": {
+      "get": {
+        "operationId": "DestinasiController_getAllDestinasi",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Daftar destinasi berhasil diambil"
+          }
+        },
+        "summary": "Mendapatkan semua destinasi wisata",
+        "tags": [
+          "Destinasi"
+        ]
+      },
+      "post": {
+        "operationId": "DestinasiController_createDestinasi",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDestinasiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Destinasi berhasil ditambahkan"
+          },
+          "401": {
+            "description": "Token JWT tidak valid atau belum login"
+          },
+          "403": {
+            "description": "Hanya admin yang dapat menambahkan destinasi"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Menambahkan destinasi wisata",
+        "tags": [
+          "Destinasi"
+        ]
+      }
+    },
+    "/destinasi/{id}": {
+      "get": {
+        "operationId": "DestinasiController_getDestinasiById",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data destinasi berhasil diambil"
+          },
+          "404": {
+            "description": "Destinasi tidak ditemukan"
+          }
+        },
+        "summary": "Mendapatkan destinasi berdasarkan ID",
+        "tags": [
+          "Destinasi"
+        ]
+      },
+      "patch": {
+        "operationId": "DestinasiController_updateDestinasi",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDestinasiDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Destinasi berhasil diperbarui"
+          },
+          "401": {
+            "description": "Token JWT tidak valid atau belum login"
+          },
+          "403": {
+            "description": "Hanya admin yang dapat memperbarui destinasi"
+          },
+          "404": {
+            "description": "Destinasi tidak ditemukan"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Memperbarui destinasi wisata",
+        "tags": [
+          "Destinasi"
+        ]
+      },
+      "delete": {
+        "operationId": "DestinasiController_deleteDestinasi",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Destinasi berhasil dihapus"
+          },
+          "401": {
+            "description": "Token JWT tidak valid atau belum login"
+          },
+          "403": {
+            "description": "Hanya admin yang dapat menghapus destinasi"
+          },
+          "404": {
+            "description": "Destinasi tidak ditemukan"
+          }
+        },
+        "security": [
+          {
+            "bearer": []
+          }
+        ],
+        "summary": "Menghapus destinasi wisata",
+        "tags": [
+          "Destinasi"
+        ]
+      }
+    },
+    "/destinasi/{id}/ulasan": {
+      "get": {
+        "operationId": "DestinasiController_getUlasan",
+        "parameters": [
+          {
+            "name": "id",
+            "required": true,
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Data ulasan berhasil diambil"
+          }
+        },
+        "summary": "Mendapatkan ulasan destinasi",
+        "tags": [
+          "Destinasi"
+        ]
+      }
+    },
+    "/auth/register": {
+      "post": {
+        "operationId": "AuthController_register",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Registrasi berhasil"
+          },
+          "409": {
+            "description": "Email sudah terdaftar"
+          }
+        },
+        "summary": "Registrasi pengguna baru",
+        "tags": [
+          "Auth"
+        ]
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "operationId": "AuthController_login",
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login berhasil dan mendapatkan JWT"
+          },
+          "401": {
+            "description": "Email atau password salah"
+          }
+        },
+        "summary": "Login pengguna",
+        "tags": [
+          "Auth"
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "WisataKu API",
+    "description": "API untuk platform informasi dan reservasi destinasi wisata",
+    "version": "1.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": {
+    "securitySchemes": {
+      "bearer": {
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "type": "http"
+      }
+    },
+    "schemas": {
+      "CreateDestinasiDto": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string",
+            "example": "Pantai Tanjung Aan",
+            "description": "Nama destinasi wisata"
+          },
+          "kategori": {
+            "type": "string",
+            "example": "Pantai",
+            "description": "Kategori destinasi wisata"
+          },
+          "hargaTiket": {
+            "type": "number",
+            "example": 15000,
+            "description": "Harga tiket masuk dalam rupiah"
+          }
+        },
+        "required": [
+          "nama",
+          "kategori",
+          "hargaTiket"
+        ]
+      },
+      "UpdateDestinasiDto": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string",
+            "example": "Pantai Tanjung Aan",
+            "description": "Nama destinasi wisata"
+          },
+          "kategori": {
+            "type": "string",
+            "example": "Pantai",
+            "description": "Kategori destinasi wisata"
+          },
+          "hargaTiket": {
+            "type": "number",
+            "example": 15000,
+            "description": "Harga tiket masuk dalam rupiah"
+          }
+        }
+      },
+      "RegisterDto": {
+        "type": "object",
+        "properties": {
+          "nama": {
+            "type": "string",
+            "example": "Ahmad",
+            "description": "Nama pengguna"
+          },
+          "email": {
+            "type": "string",
+            "example": "ahmad@gmail.com",
+            "description": "Email pengguna"
+          },
+          "password": {
+            "type": "string",
+            "example": "password123",
+            "description": "Password minimal 6 karakter"
+          }
+        },
+        "required": [
+          "nama",
+          "email",
+          "password"
+        ]
+      },
+      "LoginDto": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "example": "ahmad@gmail.com",
+            "description": "Email pengguna"
+          },
+          "password": {
+            "type": "string",
+            "example": "password123",
+            "description": "Password pengguna"
+          }
+        },
+        "required": [
+          "email",
+          "password"
+        ]
+      }
+    }
+  }
+}

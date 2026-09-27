@@ -1,0 +1,18 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type DestinasiType {
+  id: Int!
+  nama: String!
+  kategori: String!
+  lokasi: String!
+  deskripsi: String!
+  hargaTiket: Int!
+  ratingRata: Float!
+}
+
+type Query {
+  destinasi: [DestinasiType!]!
+  destinasiById(id: Int!): DestinasiType!
+}
